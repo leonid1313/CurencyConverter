@@ -22,7 +22,7 @@ function App() {
       {loader 
       ? (
         <>
-          <Router basename="/currencyconverter">
+          <Router basename="/CurrencyConverter">
               <Route path="/" exact component={Converter}/>
               <Route path="/about" exact component={About}/>
           </Router>
