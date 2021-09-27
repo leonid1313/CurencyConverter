@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 import Loader from './components/Loader/Loader';
 import About from './components/About/About';
-import Api from './components/Api/Api';
+import Converter from './components/Converter/Converter'
 
 function App() {
 
@@ -23,7 +23,7 @@ function App() {
       ? (
         <>
           <Router basename="/currencyconverter">
-              <Route path="/" exact component={Api}/>
+              <Route path="/" exact component={Converter}/>
               <Route path="/about" exact component={About}/>
           </Router>
         </>
