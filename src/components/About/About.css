@@ -1,0 +1,22 @@
+.list {
+  display: flex;
+}
+
+.name {
+  list-style: square;
+}
+
+.value {
+  list-style: none;
+}
+
+.link-back {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.link-back:hover {
+  color: red;
+}

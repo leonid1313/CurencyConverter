@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
 import './App.css';
+import Loader from './components/Loader/Loader';
+import About from './components/About/About';
+import Api from './components/Api/Api';
 
 function App() {
+
+  const [loader, setLoader] = useState(false);
+
+  useEffect(() => {
+    setLoader(false);
+    setTimeout(() => {
+      setLoader(true)
+    }, 1000)
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {loader 
+      ? (
+        <>
+          <Router basename="/currencyconverter">
+              <Route path="/" exact component={Api}/>
+              <Route path="/about" exact component={About}/>
+          </Router>
+        </>
+      )
+      :  <Loader/>}
+    </>
   );
 }
 
